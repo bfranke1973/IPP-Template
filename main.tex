@@ -1,0 +1,271 @@
+%
+%                       This is a basic LaTeX Template
+%                       for the Informatics Research Review
+
+\documentclass[a4paper,11pt]{article}
+% Add local fullpage and head macros
+\usepackage{head,fullpage}     
+% Add graphicx package with pdf flag (must use pdflatex)
+\usepackage[pdftex]{graphicx}  
+% Better support for URLs
+\usepackage{url}
+% Date formating
+\usepackage{datetime}
+% For Gantt chart
+\usepackage{pgfgantt}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+
+\parindent=0pt          %  Switch off indent of paragraphs 
+\parskip=5pt            %  Put 5pt between each paragraph  
+\Urlmuskip=0mu plus 1mu %  Better line breaks for URLs
+
+
+%                       This section generates a title page
+%                       Edit only the following three lines
+%                       providing your name & matric. no, 
+%                       the general field of study you are considering
+%                       for your review, and name of IRR tutor
+
+\newcommand{\name}{Firstname Lastname (s123456789)}
+\newcommand{\field}{Whatever I Write About}
+\newcommand{\tutor}{My IRR Tutor}
+\newcommand{\supervisor}{My Project Supervisor}
+
+\begin{document}
+\begin{minipage}[b]{110mm}
+        {\Huge\bf School of Informatics
+        \vspace*{17mm}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{40mm}               
+        \makebox[40mm]{
+        \includegraphics[width=40mm]{crest.png}}
+\end{minipage}
+\par\noindent
+    % Centre Title, and name
+\vspace*{2cm}
+\begin{center}
+        \Large\bf Informatics Project Proposal \\
+        \Large\bf \field
+\end{center}
+\vspace*{1.5cm}
+\begin{center}
+        \bf \name\\
+        \monthyeardate\today
+\end{center}
+\vspace*{5mm}
+
+%
+%                       Insert your abstract HERE
+%                       
+\begin{abstract}
+        The abstract is a short concise outline of your 
+        project proposal, {\bf of no more than 100 words}.
+\end{abstract}
+
+\vspace*{1cm}
+
+\vspace*{3cm}
+Signature:\hspace*{8cm}Date: \today
+
+\vfill
+{\bf Tutor:} \tutor\\
+{\bf Supervisor:} \supervisor
+\newpage
+
+%                                               Through page and setup 
+%                                               fancy headings
+\setcounter{page}{1}                            % Set page number to 1
+\footruleheight{1pt}
+\headruleheight{1pt}
+\lfoot{\small School of Informatics}
+\lhead{Informatics Research Review}
+\rhead{- \thepage}
+\cfoot{}
+\rfoot{Date: \date{\today}}
+%
+\tableofcontents                                % Makes Table of Contents
+
+\section{Motivation}
+
+Introduce the topic of research and explain its academic and industrial context.
+
+\begin{itemize}
+    \item Establish the general subject area.
+    \item Describe the broad foundations of your study -- provide adequate background for readers.
+    \item Indicate the general scope of your project.
+    \item Provide an overview of the sections that will appear in your proposal (optional).
+    \item Engage the readers.
+\end{itemize}
+
+\subsection{Problem Statement}
+
+\begin{itemize}
+    \item Answer the question:''What is the gap that needs to be filled?"
+    and/or ''What is the problem that needs to be solved?"
+    \item State the problem clearly early in a paragraph.
+    \item Limit the variables you address in stating your problem.
+    \item Consider bordering the problem as a question.
+\end{itemize}
+
+\subsection{Research Hypothesis and Objectives}
+
+Identify the overall aims of the project and the individual measurable objectives against which you would wish the outcome of the work to be assessed. Clearly spell out any research hypothesis you are following.
+
+Include a justification (rationale) for the study. Be clear about what your study will not address.
+
+\subsection{Timeliness and Novelty}
+
+Explain why the proposed research is of sufficient timeliness and novelty
+
+\subsection{Significance}
+
+The proposal should demonstrate the originality of your intended research. You should therefore explain why your research is important (for example, by explaining how your research builds on and adds to the current state of knowledge in the field or by setting out reasons why it is timely to research your proposed topic) and providing details of any immediate applications, including further research that might be done to build on your findings.
+
+\subsection{Feasibility}
+
+Comment on the feasibility of the research plans given its limited time frame and resources. Outline your plans for a feasibility study before starting e.g.\ major implementation work.
+
+\subsection{Beneficiaries}
+
+Describe how the research will benefit other researchers in the field and in related disciplines. What will be done to ensure that they can benefit? 
+
+
+\section{Background}
+
+Demonstrate a knowledge and understanding of past and current work in the subject area, including relevant references like this \cite{template}.
+
+\section{Programme and Methodology}
+
+\begin{itemize}
+    \item Detail the methodology to be used in pursuit of the research and justify this choice.
+    \item Describe your contributions and novelty and where you
+    will go beyond the state-of-the-art (new methods, new tools,
+    new data, new insights, new proofs,...)
+    \item Describe the programme of work, indicating the research to be undertaken and the milestones that can be used to measure its progress.
+    \item Where suitable define work packages and define the dependences
+    between these work packages. WPs and their dependences should be
+    shown in the Gantt chart in the research plan.
+    \item Explain how the project will be managed.
+    \item State the limitations of your research.
+\end{itemize}
+
+\section{Evaluation}
+
+\begin{itemize}
+    \item Describe the specific methods of data collection.
+    \item Explain how you intent to analyse and interpret the results.
+\end{itemize}
+
+\section{Expected Outcomes}
+
+Conclude your research proposal by addressing your predicted outcomes. What are you hoping to prove/disprove? Indicate how you envisage your research will contribute to debates and discussions in your particular subject area:
+
+\begin{itemize}
+    \item How will your research make an original contribution to knowledge?
+    \item How might it fill gaps in existing work? 
+    \item How might it extend understanding of particular topics?
+\end{itemize}
+
+
+\section{Research Plan, Milestones and Deliverables}
+
+\definecolor{barblue}{RGB}{153,204,254}
+\definecolor{groupblue}{RGB}{51,102,254}
+\definecolor{linkred}{RGB}{165,0,33} 
+
+\begin{figure}[htbp]
+\begin{ganttchart}[
+    y unit title=0.4cm,
+    y unit chart=0.5cm,
+    vgrid,hgrid,
+    x unit=1.55mm,
+    time slot format=isodate,
+    title/.append style={draw=none, fill=barblue},
+    title label font=\sffamily\bfseries\color{white},
+    title label node/.append style={below=-1.6ex},
+    title left shift=.05,
+    title right shift=-.05,
+    title height=1,
+    bar/.append style={draw=none, fill=groupblue},
+    bar height=.6,
+    bar label font=\normalsize\color{black!50},
+    group right shift=0,
+    group top shift=.6,
+    group height=.3,
+    group peaks height=.2,
+    bar incomplete/.append style={fill=green}
+   ]{2018-06-01}{2018-08-16}
+   \gantttitlecalendar{month=name}\\
+   \ganttbar[
+    progress=100,
+    bar progress label font=\small\color{barblue},
+    bar progress label node/.append style={right=4pt},
+    bar label font=\normalsize\color{barblue},
+    name=pp
+   ]{Background Reading}{2018-06-01}{2018-06-14} \\
+\ganttset{progress label text={}, link/.style={black, -to}}
+\ganttgroup{Objective 1}{2018-06-14}{2018-06-30} \\
+\ganttbar[progress=4, name=T1A]{Task A}{2018-06-14}{2018-06-21} \\
+\ganttlinkedbar[progress=0]{Task B}{2018-06-21}{2018-06-30} \\
+\ganttgroup{Objective 2}{2018-07-01}{2018-07-14} \\
+\ganttbar[progress=15, name=T2A]{Task A}{2018-07-01}{2018-07-07} \\
+\ganttlinkedbar[progress=0]{Task B}{2018-07-07}{2018-07-14} \\
+\ganttgroup{Dissertation    }{2018-07-14}{2018-08-16} \\
+  \ganttbar[progress=0]{Task A}{2018-07-14}{2018-08-16}
+  \ganttset{link/.style={green}}
+  \ganttlink[link mid=.4]{pp}{T1A}
+  \ganttlink[link mid=.159]{pp}{T2A}
+\end{ganttchart}
+\caption{Gantt Chart of the activities defined for this project.}
+\label{fig:gantt}
+\end{figure}
+
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{|c|c|l|}
+        \hline
+        \textbf{Milestone} & \textbf{Week} & \textbf{Description} \\
+        \hline
+        $M_1$ & 2 & Feasibility study completed \\
+        $M_2$ & 5 & First prototype implementation completed \\
+        $M_3$ & 7 & Evaluation completed \\
+        $M_4$ & 10 & Submission of dissertation \\
+        \hline
+        \end{tabular} 
+    \end{center}
+    \caption{Milestones defined in this project.}
+    \label{fig:milestones}
+\end{table}
+
+\begin{table}[htbp]
+    \begin{center}
+        \begin{tabular}{|c|c|l|}
+        \hline
+        \textbf{Deliverable} & \textbf{Week} & \textbf{Description} \\
+        \hline
+        $D_1$ & 6 & Software tool for \dots\\
+        $D_2$ & 8 & Evaluation report on \dots\\
+        $D_3$ & 10 & Dissertation \\
+        \hline
+        \end{tabular} 
+    \end{center}
+    \caption{List of deliverables defined in this project.}
+    \label{fig:deliverables}
+\end{table}
+
+
+%                Now build the reference list
+\bibliographystyle{unsrt}   % The reference style
+%                This is plain and unsorted, so in the order
+%                they appear in the document.
+
+
+\bibliography{main}       % bib file(s).
+
+\end{document}
+
