@@ -26,11 +26,11 @@
 
 %                       This section generates a title page
 %                       Edit only the following three lines
-%                       providing your name & matric. no, 
+%                       providing your exam number, 
 %                       the general field of study you are considering
 %                       for your review, and name of IRR tutor
 
-\newcommand{\name}{Firstname Lastname (s123456789)}
+\newcommand{\examnumber}{123456789}
 \newcommand{\field}{Whatever I Write About}
 \newcommand{\tutor}{My IRR Tutor}
 \newcommand{\supervisor}{My Project Supervisor}
@@ -54,7 +54,7 @@
 \end{center}
 \vspace*{1.5cm}
 \begin{center}
-        \bf \name\\
+        \bf \examnumber\\
         \monthyeardate\today
 \end{center}
 \vspace*{5mm}
@@ -70,7 +70,7 @@
 \vspace*{1cm}
 
 \vspace*{3cm}
-Signature:\hspace*{8cm}Date: \today
+Date: \today
 
 \vfill
 {\bf Tutor:} \tutor\\
@@ -264,8 +264,8 @@ Conclude your research proposal by addressing your predicted outcomes. What are 
 %                This is plain and unsorted, so in the order
 %                they appear in the document.
 
-
+{\small
 \bibliography{main}       % bib file(s).
-
+}
 \end{document}
 
