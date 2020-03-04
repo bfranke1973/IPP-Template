@@ -7,7 +7,7 @@ To use this template in Overleaf clone this project in your own Github account, 
 
 Edit the "main.tex" file:
 
-Provide your name & matriculation number, field of the literature review, and tutor name in the relevant fields.
+Provide your name & exam number, field of the literature review, and tutor name in the relevant fields.
 Provide your abstract in the relevant section.
 Read the descriptions, delete the sample text and write your proposal.
 Adding bibliography entries:
